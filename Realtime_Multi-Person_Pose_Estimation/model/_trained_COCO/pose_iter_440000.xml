@@ -1,0 +1,4055 @@
+<?xml version="1.0" ?>
+<net batch="1" name="pose_iter_440000" version="2">
+	<layers>
+		<layer id="0" name="data" precision="FP32" type="Input">
+			<output>
+				<port id="0">
+					<dim>1</dim>
+					<dim>3</dim>
+					<dim>368</dim>
+					<dim>368</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="1" name="conv1_1" precision="FP32" type="Convolution">
+			<data dilation-x="1" dilation-y="1" group="1" kernel-x="3" kernel-y="3" output="64" pad-x="1" pad-y="1" stride="1,1,1,1" stride-x="1" stride-y="1"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>3</dim>
+					<dim>368</dim>
+					<dim>368</dim>
+				</port>
+			</input>
+			<output>
+				<port id="3">
+					<dim>1</dim>
+					<dim>64</dim>
+					<dim>368</dim>
+					<dim>368</dim>
+				</port>
+			</output>
+			<blobs>
+				<weights offset="0" size="6912"/>
+				<biases offset="6912" size="256"/>
+			</blobs>
+		</layer>
+		<layer id="2" name="relu1_1" precision="FP32" type="ReLU">
+			<data negative_slope="0.0"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>64</dim>
+					<dim>368</dim>
+					<dim>368</dim>
+				</port>
+			</input>
+			<output>
+				<port id="1">
+					<dim>1</dim>
+					<dim>64</dim>
+					<dim>368</dim>
+					<dim>368</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="3" name="conv1_2" precision="FP32" type="Convolution">
+			<data dilation-x="1" dilation-y="1" group="1" kernel-x="3" kernel-y="3" output="64" pad-x="1" pad-y="1" stride="1,1,1,1" stride-x="1" stride-y="1"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>64</dim>
+					<dim>368</dim>
+					<dim>368</dim>
+				</port>
+			</input>
+			<output>
+				<port id="3">
+					<dim>1</dim>
+					<dim>64</dim>
+					<dim>368</dim>
+					<dim>368</dim>
+				</port>
+			</output>
+			<blobs>
+				<weights offset="7168" size="147456"/>
+				<biases offset="154624" size="256"/>
+			</blobs>
+		</layer>
+		<layer id="4" name="relu1_2" precision="FP32" type="ReLU">
+			<data negative_slope="0.0"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>64</dim>
+					<dim>368</dim>
+					<dim>368</dim>
+				</port>
+			</input>
+			<output>
+				<port id="1">
+					<dim>1</dim>
+					<dim>64</dim>
+					<dim>368</dim>
+					<dim>368</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="5" name="pool1_stage1" precision="FP32" type="Pooling">
+			<data exclude-pad="false" kernel-x="2" kernel-y="2" pad-x="0" pad-y="0" pool-method="max" rounding_type="ceil" stride="1,1,2,2" stride-x="2" stride-y="2"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>64</dim>
+					<dim>368</dim>
+					<dim>368</dim>
+				</port>
+			</input>
+			<output>
+				<port id="1">
+					<dim>1</dim>
+					<dim>64</dim>
+					<dim>184</dim>
+					<dim>184</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="6" name="conv2_1" precision="FP32" type="Convolution">
+			<data dilation-x="1" dilation-y="1" group="1" kernel-x="3" kernel-y="3" output="128" pad-x="1" pad-y="1" stride="1,1,1,1" stride-x="1" stride-y="1"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>64</dim>
+					<dim>184</dim>
+					<dim>184</dim>
+				</port>
+			</input>
+			<output>
+				<port id="3">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>184</dim>
+					<dim>184</dim>
+				</port>
+			</output>
+			<blobs>
+				<weights offset="154880" size="294912"/>
+				<biases offset="449792" size="512"/>
+			</blobs>
+		</layer>
+		<layer id="7" name="relu2_1" precision="FP32" type="ReLU">
+			<data negative_slope="0.0"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>184</dim>
+					<dim>184</dim>
+				</port>
+			</input>
+			<output>
+				<port id="1">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>184</dim>
+					<dim>184</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="8" name="conv2_2" precision="FP32" type="Convolution">
+			<data dilation-x="1" dilation-y="1" group="1" kernel-x="3" kernel-y="3" output="128" pad-x="1" pad-y="1" stride="1,1,1,1" stride-x="1" stride-y="1"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>184</dim>
+					<dim>184</dim>
+				</port>
+			</input>
+			<output>
+				<port id="3">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>184</dim>
+					<dim>184</dim>
+				</port>
+			</output>
+			<blobs>
+				<weights offset="450304" size="589824"/>
+				<biases offset="1040128" size="512"/>
+			</blobs>
+		</layer>
+		<layer id="9" name="relu2_2" precision="FP32" type="ReLU">
+			<data negative_slope="0.0"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>184</dim>
+					<dim>184</dim>
+				</port>
+			</input>
+			<output>
+				<port id="1">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>184</dim>
+					<dim>184</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="10" name="pool2_stage1" precision="FP32" type="Pooling">
+			<data exclude-pad="false" kernel-x="2" kernel-y="2" pad-x="0" pad-y="0" pool-method="max" rounding_type="ceil" stride="1,1,2,2" stride-x="2" stride-y="2"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>184</dim>
+					<dim>184</dim>
+				</port>
+			</input>
+			<output>
+				<port id="1">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>92</dim>
+					<dim>92</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="11" name="conv3_1" precision="FP32" type="Convolution">
+			<data dilation-x="1" dilation-y="1" group="1" kernel-x="3" kernel-y="3" output="256" pad-x="1" pad-y="1" stride="1,1,1,1" stride-x="1" stride-y="1"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>92</dim>
+					<dim>92</dim>
+				</port>
+			</input>
+			<output>
+				<port id="3">
+					<dim>1</dim>
+					<dim>256</dim>
+					<dim>92</dim>
+					<dim>92</dim>
+				</port>
+			</output>
+			<blobs>
+				<weights offset="1040640" size="1179648"/>
+				<biases offset="2220288" size="1024"/>
+			</blobs>
+		</layer>
+		<layer id="12" name="relu3_1" precision="FP32" type="ReLU">
+			<data negative_slope="0.0"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>256</dim>
+					<dim>92</dim>
+					<dim>92</dim>
+				</port>
+			</input>
+			<output>
+				<port id="1">
+					<dim>1</dim>
+					<dim>256</dim>
+					<dim>92</dim>
+					<dim>92</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="13" name="conv3_2" precision="FP32" type="Convolution">
+			<data dilation-x="1" dilation-y="1" group="1" kernel-x="3" kernel-y="3" output="256" pad-x="1" pad-y="1" stride="1,1,1,1" stride-x="1" stride-y="1"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>256</dim>
+					<dim>92</dim>
+					<dim>92</dim>
+				</port>
+			</input>
+			<output>
+				<port id="3">
+					<dim>1</dim>
+					<dim>256</dim>
+					<dim>92</dim>
+					<dim>92</dim>
+				</port>
+			</output>
+			<blobs>
+				<weights offset="2221312" size="2359296"/>
+				<biases offset="4580608" size="1024"/>
+			</blobs>
+		</layer>
+		<layer id="14" name="relu3_2" precision="FP32" type="ReLU">
+			<data negative_slope="0.0"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>256</dim>
+					<dim>92</dim>
+					<dim>92</dim>
+				</port>
+			</input>
+			<output>
+				<port id="1">
+					<dim>1</dim>
+					<dim>256</dim>
+					<dim>92</dim>
+					<dim>92</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="15" name="conv3_3" precision="FP32" type="Convolution">
+			<data dilation-x="1" dilation-y="1" group="1" kernel-x="3" kernel-y="3" output="256" pad-x="1" pad-y="1" stride="1,1,1,1" stride-x="1" stride-y="1"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>256</dim>
+					<dim>92</dim>
+					<dim>92</dim>
+				</port>
+			</input>
+			<output>
+				<port id="3">
+					<dim>1</dim>
+					<dim>256</dim>
+					<dim>92</dim>
+					<dim>92</dim>
+				</port>
+			</output>
+			<blobs>
+				<weights offset="4581632" size="2359296"/>
+				<biases offset="6940928" size="1024"/>
+			</blobs>
+		</layer>
+		<layer id="16" name="relu3_3" precision="FP32" type="ReLU">
+			<data negative_slope="0.0"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>256</dim>
+					<dim>92</dim>
+					<dim>92</dim>
+				</port>
+			</input>
+			<output>
+				<port id="1">
+					<dim>1</dim>
+					<dim>256</dim>
+					<dim>92</dim>
+					<dim>92</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="17" name="conv3_4" precision="FP32" type="Convolution">
+			<data dilation-x="1" dilation-y="1" group="1" kernel-x="3" kernel-y="3" output="256" pad-x="1" pad-y="1" stride="1,1,1,1" stride-x="1" stride-y="1"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>256</dim>
+					<dim>92</dim>
+					<dim>92</dim>
+				</port>
+			</input>
+			<output>
+				<port id="3">
+					<dim>1</dim>
+					<dim>256</dim>
+					<dim>92</dim>
+					<dim>92</dim>
+				</port>
+			</output>
+			<blobs>
+				<weights offset="6941952" size="2359296"/>
+				<biases offset="9301248" size="1024"/>
+			</blobs>
+		</layer>
+		<layer id="18" name="relu3_4" precision="FP32" type="ReLU">
+			<data negative_slope="0.0"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>256</dim>
+					<dim>92</dim>
+					<dim>92</dim>
+				</port>
+			</input>
+			<output>
+				<port id="1">
+					<dim>1</dim>
+					<dim>256</dim>
+					<dim>92</dim>
+					<dim>92</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="19" name="pool3_stage1" precision="FP32" type="Pooling">
+			<data exclude-pad="false" kernel-x="2" kernel-y="2" pad-x="0" pad-y="0" pool-method="max" rounding_type="ceil" stride="1,1,2,2" stride-x="2" stride-y="2"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>256</dim>
+					<dim>92</dim>
+					<dim>92</dim>
+				</port>
+			</input>
+			<output>
+				<port id="1">
+					<dim>1</dim>
+					<dim>256</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="20" name="conv4_1" precision="FP32" type="Convolution">
+			<data dilation-x="1" dilation-y="1" group="1" kernel-x="3" kernel-y="3" output="512" pad-x="1" pad-y="1" stride="1,1,1,1" stride-x="1" stride-y="1"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>256</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</input>
+			<output>
+				<port id="3">
+					<dim>1</dim>
+					<dim>512</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</output>
+			<blobs>
+				<weights offset="9302272" size="4718592"/>
+				<biases offset="14020864" size="2048"/>
+			</blobs>
+		</layer>
+		<layer id="21" name="relu4_1" precision="FP32" type="ReLU">
+			<data negative_slope="0.0"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>512</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</input>
+			<output>
+				<port id="1">
+					<dim>1</dim>
+					<dim>512</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="22" name="conv4_2" precision="FP32" type="Convolution">
+			<data dilation-x="1" dilation-y="1" group="1" kernel-x="3" kernel-y="3" output="512" pad-x="1" pad-y="1" stride="1,1,1,1" stride-x="1" stride-y="1"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>512</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</input>
+			<output>
+				<port id="3">
+					<dim>1</dim>
+					<dim>512</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</output>
+			<blobs>
+				<weights offset="14022912" size="9437184"/>
+				<biases offset="23460096" size="2048"/>
+			</blobs>
+		</layer>
+		<layer id="23" name="relu4_2" precision="FP32" type="ReLU">
+			<data negative_slope="0.0"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>512</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</input>
+			<output>
+				<port id="1">
+					<dim>1</dim>
+					<dim>512</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="24" name="conv4_3_CPM" precision="FP32" type="Convolution">
+			<data dilation-x="1" dilation-y="1" group="1" kernel-x="3" kernel-y="3" output="256" pad-x="1" pad-y="1" stride="1,1,1,1" stride-x="1" stride-y="1"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>512</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</input>
+			<output>
+				<port id="3">
+					<dim>1</dim>
+					<dim>256</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</output>
+			<blobs>
+				<weights offset="23462144" size="4718592"/>
+				<biases offset="28180736" size="1024"/>
+			</blobs>
+		</layer>
+		<layer id="25" name="relu4_3_CPM" precision="FP32" type="ReLU">
+			<data negative_slope="0.0"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>256</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</input>
+			<output>
+				<port id="1">
+					<dim>1</dim>
+					<dim>256</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="26" name="conv4_4_CPM" precision="FP32" type="Convolution">
+			<data dilation-x="1" dilation-y="1" group="1" kernel-x="3" kernel-y="3" output="128" pad-x="1" pad-y="1" stride="1,1,1,1" stride-x="1" stride-y="1"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>256</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</input>
+			<output>
+				<port id="3">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</output>
+			<blobs>
+				<weights offset="28181760" size="1179648"/>
+				<biases offset="29361408" size="512"/>
+			</blobs>
+		</layer>
+		<layer id="27" name="relu4_4_CPM" precision="FP32" type="ReLU">
+			<data negative_slope="0.0"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</input>
+			<output>
+				<port id="1">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="28" name="conv5_1_CPM_L1" precision="FP32" type="Convolution">
+			<data dilation-x="1" dilation-y="1" group="1" kernel-x="3" kernel-y="3" output="128" pad-x="1" pad-y="1" stride="1,1,1,1" stride-x="1" stride-y="1"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</input>
+			<output>
+				<port id="3">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</output>
+			<blobs>
+				<weights offset="29361920" size="589824"/>
+				<biases offset="29951744" size="512"/>
+			</blobs>
+		</layer>
+		<layer id="29" name="relu5_1_CPM_L1" precision="FP32" type="ReLU">
+			<data negative_slope="0.0"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</input>
+			<output>
+				<port id="1">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="30" name="conv5_2_CPM_L1" precision="FP32" type="Convolution">
+			<data dilation-x="1" dilation-y="1" group="1" kernel-x="3" kernel-y="3" output="128" pad-x="1" pad-y="1" stride="1,1,1,1" stride-x="1" stride-y="1"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</input>
+			<output>
+				<port id="3">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</output>
+			<blobs>
+				<weights offset="29952256" size="589824"/>
+				<biases offset="30542080" size="512"/>
+			</blobs>
+		</layer>
+		<layer id="31" name="relu5_2_CPM_L1" precision="FP32" type="ReLU">
+			<data negative_slope="0.0"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</input>
+			<output>
+				<port id="1">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="32" name="conv5_3_CPM_L1" precision="FP32" type="Convolution">
+			<data dilation-x="1" dilation-y="1" group="1" kernel-x="3" kernel-y="3" output="128" pad-x="1" pad-y="1" stride="1,1,1,1" stride-x="1" stride-y="1"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</input>
+			<output>
+				<port id="3">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</output>
+			<blobs>
+				<weights offset="30542592" size="589824"/>
+				<biases offset="31132416" size="512"/>
+			</blobs>
+		</layer>
+		<layer id="33" name="relu5_3_CPM_L1" precision="FP32" type="ReLU">
+			<data negative_slope="0.0"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</input>
+			<output>
+				<port id="1">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="34" name="conv5_4_CPM_L1" precision="FP32" type="Convolution">
+			<data dilation-x="1" dilation-y="1" group="1" kernel-x="1" kernel-y="1" output="512" pad-x="0" pad-y="0" stride="1,1,1,1" stride-x="1" stride-y="1"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</input>
+			<output>
+				<port id="3">
+					<dim>1</dim>
+					<dim>512</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</output>
+			<blobs>
+				<weights offset="31132928" size="262144"/>
+				<biases offset="31395072" size="2048"/>
+			</blobs>
+		</layer>
+		<layer id="35" name="relu5_4_CPM_L1" precision="FP32" type="ReLU">
+			<data negative_slope="0.0"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>512</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</input>
+			<output>
+				<port id="1">
+					<dim>1</dim>
+					<dim>512</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="36" name="conv5_5_CPM_L1" precision="FP32" type="Convolution">
+			<data dilation-x="1" dilation-y="1" group="1" kernel-x="1" kernel-y="1" output="38" pad-x="0" pad-y="0" stride="1,1,1,1" stride-x="1" stride-y="1"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>512</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</input>
+			<output>
+				<port id="3">
+					<dim>1</dim>
+					<dim>38</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</output>
+			<blobs>
+				<weights offset="31397120" size="77824"/>
+				<biases offset="31474944" size="152"/>
+			</blobs>
+		</layer>
+		<layer id="37" name="conv5_1_CPM_L2" precision="FP32" type="Convolution">
+			<data dilation-x="1" dilation-y="1" group="1" kernel-x="3" kernel-y="3" output="128" pad-x="1" pad-y="1" stride="1,1,1,1" stride-x="1" stride-y="1"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</input>
+			<output>
+				<port id="3">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</output>
+			<blobs>
+				<weights offset="31475096" size="589824"/>
+				<biases offset="32064920" size="512"/>
+			</blobs>
+		</layer>
+		<layer id="38" name="relu5_1_CPM_L2" precision="FP32" type="ReLU">
+			<data negative_slope="0.0"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</input>
+			<output>
+				<port id="1">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="39" name="conv5_2_CPM_L2" precision="FP32" type="Convolution">
+			<data dilation-x="1" dilation-y="1" group="1" kernel-x="3" kernel-y="3" output="128" pad-x="1" pad-y="1" stride="1,1,1,1" stride-x="1" stride-y="1"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</input>
+			<output>
+				<port id="3">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</output>
+			<blobs>
+				<weights offset="32065432" size="589824"/>
+				<biases offset="32655256" size="512"/>
+			</blobs>
+		</layer>
+		<layer id="40" name="relu5_2_CPM_L2" precision="FP32" type="ReLU">
+			<data negative_slope="0.0"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</input>
+			<output>
+				<port id="1">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="41" name="conv5_3_CPM_L2" precision="FP32" type="Convolution">
+			<data dilation-x="1" dilation-y="1" group="1" kernel-x="3" kernel-y="3" output="128" pad-x="1" pad-y="1" stride="1,1,1,1" stride-x="1" stride-y="1"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</input>
+			<output>
+				<port id="3">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</output>
+			<blobs>
+				<weights offset="32655768" size="589824"/>
+				<biases offset="33245592" size="512"/>
+			</blobs>
+		</layer>
+		<layer id="42" name="relu5_3_CPM_L2" precision="FP32" type="ReLU">
+			<data negative_slope="0.0"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</input>
+			<output>
+				<port id="1">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="43" name="conv5_4_CPM_L2" precision="FP32" type="Convolution">
+			<data dilation-x="1" dilation-y="1" group="1" kernel-x="1" kernel-y="1" output="512" pad-x="0" pad-y="0" stride="1,1,1,1" stride-x="1" stride-y="1"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</input>
+			<output>
+				<port id="3">
+					<dim>1</dim>
+					<dim>512</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</output>
+			<blobs>
+				<weights offset="33246104" size="262144"/>
+				<biases offset="33508248" size="2048"/>
+			</blobs>
+		</layer>
+		<layer id="44" name="relu5_4_CPM_L2" precision="FP32" type="ReLU">
+			<data negative_slope="0.0"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>512</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</input>
+			<output>
+				<port id="1">
+					<dim>1</dim>
+					<dim>512</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="45" name="conv5_5_CPM_L2" precision="FP32" type="Convolution">
+			<data dilation-x="1" dilation-y="1" group="1" kernel-x="1" kernel-y="1" output="19" pad-x="0" pad-y="0" stride="1,1,1,1" stride-x="1" stride-y="1"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>512</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</input>
+			<output>
+				<port id="3">
+					<dim>1</dim>
+					<dim>19</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</output>
+			<blobs>
+				<weights offset="33510296" size="38912"/>
+				<biases offset="33549208" size="76"/>
+			</blobs>
+		</layer>
+		<layer id="46" name="concat_stage2" precision="FP32" type="Concat">
+			<data axis="1"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>38</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+				<port id="1">
+					<dim>1</dim>
+					<dim>19</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+				<port id="2">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</input>
+			<output>
+				<port id="3">
+					<dim>1</dim>
+					<dim>185</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="47" name="Mconv1_stage2_L1" precision="FP32" type="Convolution">
+			<data dilation-x="1" dilation-y="1" group="1" kernel-x="7" kernel-y="7" output="128" pad-x="3" pad-y="3" stride="1,1,1,1" stride-x="1" stride-y="1"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>185</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</input>
+			<output>
+				<port id="3">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</output>
+			<blobs>
+				<weights offset="33549284" size="4641280"/>
+				<biases offset="38190564" size="512"/>
+			</blobs>
+		</layer>
+		<layer id="48" name="Mrelu1_stage2_L1" precision="FP32" type="ReLU">
+			<data negative_slope="0.0"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</input>
+			<output>
+				<port id="1">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="49" name="Mconv2_stage2_L1" precision="FP32" type="Convolution">
+			<data dilation-x="1" dilation-y="1" group="1" kernel-x="7" kernel-y="7" output="128" pad-x="3" pad-y="3" stride="1,1,1,1" stride-x="1" stride-y="1"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</input>
+			<output>
+				<port id="3">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</output>
+			<blobs>
+				<weights offset="38191076" size="3211264"/>
+				<biases offset="41402340" size="512"/>
+			</blobs>
+		</layer>
+		<layer id="50" name="Mrelu2_stage2_L1" precision="FP32" type="ReLU">
+			<data negative_slope="0.0"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</input>
+			<output>
+				<port id="1">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="51" name="Mconv3_stage2_L1" precision="FP32" type="Convolution">
+			<data dilation-x="1" dilation-y="1" group="1" kernel-x="7" kernel-y="7" output="128" pad-x="3" pad-y="3" stride="1,1,1,1" stride-x="1" stride-y="1"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</input>
+			<output>
+				<port id="3">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</output>
+			<blobs>
+				<weights offset="41402852" size="3211264"/>
+				<biases offset="44614116" size="512"/>
+			</blobs>
+		</layer>
+		<layer id="52" name="Mrelu3_stage2_L1" precision="FP32" type="ReLU">
+			<data negative_slope="0.0"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</input>
+			<output>
+				<port id="1">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="53" name="Mconv4_stage2_L1" precision="FP32" type="Convolution">
+			<data dilation-x="1" dilation-y="1" group="1" kernel-x="7" kernel-y="7" output="128" pad-x="3" pad-y="3" stride="1,1,1,1" stride-x="1" stride-y="1"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</input>
+			<output>
+				<port id="3">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</output>
+			<blobs>
+				<weights offset="44614628" size="3211264"/>
+				<biases offset="47825892" size="512"/>
+			</blobs>
+		</layer>
+		<layer id="54" name="Mrelu4_stage2_L1" precision="FP32" type="ReLU">
+			<data negative_slope="0.0"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</input>
+			<output>
+				<port id="1">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="55" name="Mconv5_stage2_L1" precision="FP32" type="Convolution">
+			<data dilation-x="1" dilation-y="1" group="1" kernel-x="7" kernel-y="7" output="128" pad-x="3" pad-y="3" stride="1,1,1,1" stride-x="1" stride-y="1"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</input>
+			<output>
+				<port id="3">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</output>
+			<blobs>
+				<weights offset="47826404" size="3211264"/>
+				<biases offset="51037668" size="512"/>
+			</blobs>
+		</layer>
+		<layer id="56" name="Mrelu5_stage2_L1" precision="FP32" type="ReLU">
+			<data negative_slope="0.0"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</input>
+			<output>
+				<port id="1">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="57" name="Mconv6_stage2_L1" precision="FP32" type="Convolution">
+			<data dilation-x="1" dilation-y="1" group="1" kernel-x="1" kernel-y="1" output="128" pad-x="0" pad-y="0" stride="1,1,1,1" stride-x="1" stride-y="1"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</input>
+			<output>
+				<port id="3">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</output>
+			<blobs>
+				<weights offset="51038180" size="65536"/>
+				<biases offset="51103716" size="512"/>
+			</blobs>
+		</layer>
+		<layer id="58" name="Mrelu6_stage2_L1" precision="FP32" type="ReLU">
+			<data negative_slope="0.0"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</input>
+			<output>
+				<port id="1">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="59" name="Mconv7_stage2_L1" precision="FP32" type="Convolution">
+			<data dilation-x="1" dilation-y="1" group="1" kernel-x="1" kernel-y="1" output="38" pad-x="0" pad-y="0" stride="1,1,1,1" stride-x="1" stride-y="1"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</input>
+			<output>
+				<port id="3">
+					<dim>1</dim>
+					<dim>38</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</output>
+			<blobs>
+				<weights offset="51104228" size="19456"/>
+				<biases offset="51123684" size="152"/>
+			</blobs>
+		</layer>
+		<layer id="60" name="Mconv1_stage2_L2" precision="FP32" type="Convolution">
+			<data dilation-x="1" dilation-y="1" group="1" kernel-x="7" kernel-y="7" output="128" pad-x="3" pad-y="3" stride="1,1,1,1" stride-x="1" stride-y="1"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>185</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</input>
+			<output>
+				<port id="3">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</output>
+			<blobs>
+				<weights offset="51123836" size="4641280"/>
+				<biases offset="55765116" size="512"/>
+			</blobs>
+		</layer>
+		<layer id="61" name="Mrelu1_stage2_L2" precision="FP32" type="ReLU">
+			<data negative_slope="0.0"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</input>
+			<output>
+				<port id="1">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="62" name="Mconv2_stage2_L2" precision="FP32" type="Convolution">
+			<data dilation-x="1" dilation-y="1" group="1" kernel-x="7" kernel-y="7" output="128" pad-x="3" pad-y="3" stride="1,1,1,1" stride-x="1" stride-y="1"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</input>
+			<output>
+				<port id="3">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</output>
+			<blobs>
+				<weights offset="55765628" size="3211264"/>
+				<biases offset="58976892" size="512"/>
+			</blobs>
+		</layer>
+		<layer id="63" name="Mrelu2_stage2_L2" precision="FP32" type="ReLU">
+			<data negative_slope="0.0"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</input>
+			<output>
+				<port id="1">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="64" name="Mconv3_stage2_L2" precision="FP32" type="Convolution">
+			<data dilation-x="1" dilation-y="1" group="1" kernel-x="7" kernel-y="7" output="128" pad-x="3" pad-y="3" stride="1,1,1,1" stride-x="1" stride-y="1"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</input>
+			<output>
+				<port id="3">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</output>
+			<blobs>
+				<weights offset="58977404" size="3211264"/>
+				<biases offset="62188668" size="512"/>
+			</blobs>
+		</layer>
+		<layer id="65" name="Mrelu3_stage2_L2" precision="FP32" type="ReLU">
+			<data negative_slope="0.0"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</input>
+			<output>
+				<port id="1">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="66" name="Mconv4_stage2_L2" precision="FP32" type="Convolution">
+			<data dilation-x="1" dilation-y="1" group="1" kernel-x="7" kernel-y="7" output="128" pad-x="3" pad-y="3" stride="1,1,1,1" stride-x="1" stride-y="1"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</input>
+			<output>
+				<port id="3">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</output>
+			<blobs>
+				<weights offset="62189180" size="3211264"/>
+				<biases offset="65400444" size="512"/>
+			</blobs>
+		</layer>
+		<layer id="67" name="Mrelu4_stage2_L2" precision="FP32" type="ReLU">
+			<data negative_slope="0.0"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</input>
+			<output>
+				<port id="1">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="68" name="Mconv5_stage2_L2" precision="FP32" type="Convolution">
+			<data dilation-x="1" dilation-y="1" group="1" kernel-x="7" kernel-y="7" output="128" pad-x="3" pad-y="3" stride="1,1,1,1" stride-x="1" stride-y="1"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</input>
+			<output>
+				<port id="3">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</output>
+			<blobs>
+				<weights offset="65400956" size="3211264"/>
+				<biases offset="68612220" size="512"/>
+			</blobs>
+		</layer>
+		<layer id="69" name="Mrelu5_stage2_L2" precision="FP32" type="ReLU">
+			<data negative_slope="0.0"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</input>
+			<output>
+				<port id="1">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="70" name="Mconv6_stage2_L2" precision="FP32" type="Convolution">
+			<data dilation-x="1" dilation-y="1" group="1" kernel-x="1" kernel-y="1" output="128" pad-x="0" pad-y="0" stride="1,1,1,1" stride-x="1" stride-y="1"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</input>
+			<output>
+				<port id="3">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</output>
+			<blobs>
+				<weights offset="68612732" size="65536"/>
+				<biases offset="68678268" size="512"/>
+			</blobs>
+		</layer>
+		<layer id="71" name="Mrelu6_stage2_L2" precision="FP32" type="ReLU">
+			<data negative_slope="0.0"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</input>
+			<output>
+				<port id="1">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="72" name="Mconv7_stage2_L2" precision="FP32" type="Convolution">
+			<data dilation-x="1" dilation-y="1" group="1" kernel-x="1" kernel-y="1" output="19" pad-x="0" pad-y="0" stride="1,1,1,1" stride-x="1" stride-y="1"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</input>
+			<output>
+				<port id="3">
+					<dim>1</dim>
+					<dim>19</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</output>
+			<blobs>
+				<weights offset="68678780" size="9728"/>
+				<biases offset="68688508" size="76"/>
+			</blobs>
+		</layer>
+		<layer id="73" name="concat_stage3" precision="FP32" type="Concat">
+			<data axis="1"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>38</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+				<port id="1">
+					<dim>1</dim>
+					<dim>19</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+				<port id="2">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</input>
+			<output>
+				<port id="3">
+					<dim>1</dim>
+					<dim>185</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="74" name="Mconv1_stage3_L1" precision="FP32" type="Convolution">
+			<data dilation-x="1" dilation-y="1" group="1" kernel-x="7" kernel-y="7" output="128" pad-x="3" pad-y="3" stride="1,1,1,1" stride-x="1" stride-y="1"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>185</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</input>
+			<output>
+				<port id="3">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</output>
+			<blobs>
+				<weights offset="68688584" size="4641280"/>
+				<biases offset="73329864" size="512"/>
+			</blobs>
+		</layer>
+		<layer id="75" name="Mrelu1_stage3_L1" precision="FP32" type="ReLU">
+			<data negative_slope="0.0"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</input>
+			<output>
+				<port id="1">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="76" name="Mconv2_stage3_L1" precision="FP32" type="Convolution">
+			<data dilation-x="1" dilation-y="1" group="1" kernel-x="7" kernel-y="7" output="128" pad-x="3" pad-y="3" stride="1,1,1,1" stride-x="1" stride-y="1"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</input>
+			<output>
+				<port id="3">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</output>
+			<blobs>
+				<weights offset="73330376" size="3211264"/>
+				<biases offset="76541640" size="512"/>
+			</blobs>
+		</layer>
+		<layer id="77" name="Mrelu2_stage3_L1" precision="FP32" type="ReLU">
+			<data negative_slope="0.0"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</input>
+			<output>
+				<port id="1">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="78" name="Mconv3_stage3_L1" precision="FP32" type="Convolution">
+			<data dilation-x="1" dilation-y="1" group="1" kernel-x="7" kernel-y="7" output="128" pad-x="3" pad-y="3" stride="1,1,1,1" stride-x="1" stride-y="1"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</input>
+			<output>
+				<port id="3">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</output>
+			<blobs>
+				<weights offset="76542152" size="3211264"/>
+				<biases offset="79753416" size="512"/>
+			</blobs>
+		</layer>
+		<layer id="79" name="Mrelu3_stage3_L1" precision="FP32" type="ReLU">
+			<data negative_slope="0.0"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</input>
+			<output>
+				<port id="1">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="80" name="Mconv4_stage3_L1" precision="FP32" type="Convolution">
+			<data dilation-x="1" dilation-y="1" group="1" kernel-x="7" kernel-y="7" output="128" pad-x="3" pad-y="3" stride="1,1,1,1" stride-x="1" stride-y="1"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</input>
+			<output>
+				<port id="3">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</output>
+			<blobs>
+				<weights offset="79753928" size="3211264"/>
+				<biases offset="82965192" size="512"/>
+			</blobs>
+		</layer>
+		<layer id="81" name="Mrelu4_stage3_L1" precision="FP32" type="ReLU">
+			<data negative_slope="0.0"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</input>
+			<output>
+				<port id="1">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="82" name="Mconv5_stage3_L1" precision="FP32" type="Convolution">
+			<data dilation-x="1" dilation-y="1" group="1" kernel-x="7" kernel-y="7" output="128" pad-x="3" pad-y="3" stride="1,1,1,1" stride-x="1" stride-y="1"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</input>
+			<output>
+				<port id="3">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</output>
+			<blobs>
+				<weights offset="82965704" size="3211264"/>
+				<biases offset="86176968" size="512"/>
+			</blobs>
+		</layer>
+		<layer id="83" name="Mrelu5_stage3_L1" precision="FP32" type="ReLU">
+			<data negative_slope="0.0"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</input>
+			<output>
+				<port id="1">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="84" name="Mconv6_stage3_L1" precision="FP32" type="Convolution">
+			<data dilation-x="1" dilation-y="1" group="1" kernel-x="1" kernel-y="1" output="128" pad-x="0" pad-y="0" stride="1,1,1,1" stride-x="1" stride-y="1"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</input>
+			<output>
+				<port id="3">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</output>
+			<blobs>
+				<weights offset="86177480" size="65536"/>
+				<biases offset="86243016" size="512"/>
+			</blobs>
+		</layer>
+		<layer id="85" name="Mrelu6_stage3_L1" precision="FP32" type="ReLU">
+			<data negative_slope="0.0"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</input>
+			<output>
+				<port id="1">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="86" name="Mconv7_stage3_L1" precision="FP32" type="Convolution">
+			<data dilation-x="1" dilation-y="1" group="1" kernel-x="1" kernel-y="1" output="38" pad-x="0" pad-y="0" stride="1,1,1,1" stride-x="1" stride-y="1"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</input>
+			<output>
+				<port id="3">
+					<dim>1</dim>
+					<dim>38</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</output>
+			<blobs>
+				<weights offset="86243528" size="19456"/>
+				<biases offset="86262984" size="152"/>
+			</blobs>
+		</layer>
+		<layer id="87" name="Mconv1_stage3_L2" precision="FP32" type="Convolution">
+			<data dilation-x="1" dilation-y="1" group="1" kernel-x="7" kernel-y="7" output="128" pad-x="3" pad-y="3" stride="1,1,1,1" stride-x="1" stride-y="1"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>185</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</input>
+			<output>
+				<port id="3">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</output>
+			<blobs>
+				<weights offset="86263136" size="4641280"/>
+				<biases offset="90904416" size="512"/>
+			</blobs>
+		</layer>
+		<layer id="88" name="Mrelu1_stage3_L2" precision="FP32" type="ReLU">
+			<data negative_slope="0.0"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</input>
+			<output>
+				<port id="1">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="89" name="Mconv2_stage3_L2" precision="FP32" type="Convolution">
+			<data dilation-x="1" dilation-y="1" group="1" kernel-x="7" kernel-y="7" output="128" pad-x="3" pad-y="3" stride="1,1,1,1" stride-x="1" stride-y="1"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</input>
+			<output>
+				<port id="3">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</output>
+			<blobs>
+				<weights offset="90904928" size="3211264"/>
+				<biases offset="94116192" size="512"/>
+			</blobs>
+		</layer>
+		<layer id="90" name="Mrelu2_stage3_L2" precision="FP32" type="ReLU">
+			<data negative_slope="0.0"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</input>
+			<output>
+				<port id="1">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="91" name="Mconv3_stage3_L2" precision="FP32" type="Convolution">
+			<data dilation-x="1" dilation-y="1" group="1" kernel-x="7" kernel-y="7" output="128" pad-x="3" pad-y="3" stride="1,1,1,1" stride-x="1" stride-y="1"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</input>
+			<output>
+				<port id="3">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</output>
+			<blobs>
+				<weights offset="94116704" size="3211264"/>
+				<biases offset="97327968" size="512"/>
+			</blobs>
+		</layer>
+		<layer id="92" name="Mrelu3_stage3_L2" precision="FP32" type="ReLU">
+			<data negative_slope="0.0"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</input>
+			<output>
+				<port id="1">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="93" name="Mconv4_stage3_L2" precision="FP32" type="Convolution">
+			<data dilation-x="1" dilation-y="1" group="1" kernel-x="7" kernel-y="7" output="128" pad-x="3" pad-y="3" stride="1,1,1,1" stride-x="1" stride-y="1"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</input>
+			<output>
+				<port id="3">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</output>
+			<blobs>
+				<weights offset="97328480" size="3211264"/>
+				<biases offset="100539744" size="512"/>
+			</blobs>
+		</layer>
+		<layer id="94" name="Mrelu4_stage3_L2" precision="FP32" type="ReLU">
+			<data negative_slope="0.0"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</input>
+			<output>
+				<port id="1">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="95" name="Mconv5_stage3_L2" precision="FP32" type="Convolution">
+			<data dilation-x="1" dilation-y="1" group="1" kernel-x="7" kernel-y="7" output="128" pad-x="3" pad-y="3" stride="1,1,1,1" stride-x="1" stride-y="1"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</input>
+			<output>
+				<port id="3">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</output>
+			<blobs>
+				<weights offset="100540256" size="3211264"/>
+				<biases offset="103751520" size="512"/>
+			</blobs>
+		</layer>
+		<layer id="96" name="Mrelu5_stage3_L2" precision="FP32" type="ReLU">
+			<data negative_slope="0.0"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</input>
+			<output>
+				<port id="1">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="97" name="Mconv6_stage3_L2" precision="FP32" type="Convolution">
+			<data dilation-x="1" dilation-y="1" group="1" kernel-x="1" kernel-y="1" output="128" pad-x="0" pad-y="0" stride="1,1,1,1" stride-x="1" stride-y="1"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</input>
+			<output>
+				<port id="3">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</output>
+			<blobs>
+				<weights offset="103752032" size="65536"/>
+				<biases offset="103817568" size="512"/>
+			</blobs>
+		</layer>
+		<layer id="98" name="Mrelu6_stage3_L2" precision="FP32" type="ReLU">
+			<data negative_slope="0.0"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</input>
+			<output>
+				<port id="1">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="99" name="Mconv7_stage3_L2" precision="FP32" type="Convolution">
+			<data dilation-x="1" dilation-y="1" group="1" kernel-x="1" kernel-y="1" output="19" pad-x="0" pad-y="0" stride="1,1,1,1" stride-x="1" stride-y="1"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</input>
+			<output>
+				<port id="3">
+					<dim>1</dim>
+					<dim>19</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</output>
+			<blobs>
+				<weights offset="103818080" size="9728"/>
+				<biases offset="103827808" size="76"/>
+			</blobs>
+		</layer>
+		<layer id="100" name="concat_stage4" precision="FP32" type="Concat">
+			<data axis="1"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>38</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+				<port id="1">
+					<dim>1</dim>
+					<dim>19</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+				<port id="2">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</input>
+			<output>
+				<port id="3">
+					<dim>1</dim>
+					<dim>185</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="101" name="Mconv1_stage4_L1" precision="FP32" type="Convolution">
+			<data dilation-x="1" dilation-y="1" group="1" kernel-x="7" kernel-y="7" output="128" pad-x="3" pad-y="3" stride="1,1,1,1" stride-x="1" stride-y="1"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>185</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</input>
+			<output>
+				<port id="3">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</output>
+			<blobs>
+				<weights offset="103827884" size="4641280"/>
+				<biases offset="108469164" size="512"/>
+			</blobs>
+		</layer>
+		<layer id="102" name="Mrelu1_stage4_L1" precision="FP32" type="ReLU">
+			<data negative_slope="0.0"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</input>
+			<output>
+				<port id="1">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="103" name="Mconv2_stage4_L1" precision="FP32" type="Convolution">
+			<data dilation-x="1" dilation-y="1" group="1" kernel-x="7" kernel-y="7" output="128" pad-x="3" pad-y="3" stride="1,1,1,1" stride-x="1" stride-y="1"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</input>
+			<output>
+				<port id="3">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</output>
+			<blobs>
+				<weights offset="108469676" size="3211264"/>
+				<biases offset="111680940" size="512"/>
+			</blobs>
+		</layer>
+		<layer id="104" name="Mrelu2_stage4_L1" precision="FP32" type="ReLU">
+			<data negative_slope="0.0"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</input>
+			<output>
+				<port id="1">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="105" name="Mconv3_stage4_L1" precision="FP32" type="Convolution">
+			<data dilation-x="1" dilation-y="1" group="1" kernel-x="7" kernel-y="7" output="128" pad-x="3" pad-y="3" stride="1,1,1,1" stride-x="1" stride-y="1"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</input>
+			<output>
+				<port id="3">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</output>
+			<blobs>
+				<weights offset="111681452" size="3211264"/>
+				<biases offset="114892716" size="512"/>
+			</blobs>
+		</layer>
+		<layer id="106" name="Mrelu3_stage4_L1" precision="FP32" type="ReLU">
+			<data negative_slope="0.0"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</input>
+			<output>
+				<port id="1">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="107" name="Mconv4_stage4_L1" precision="FP32" type="Convolution">
+			<data dilation-x="1" dilation-y="1" group="1" kernel-x="7" kernel-y="7" output="128" pad-x="3" pad-y="3" stride="1,1,1,1" stride-x="1" stride-y="1"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</input>
+			<output>
+				<port id="3">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</output>
+			<blobs>
+				<weights offset="114893228" size="3211264"/>
+				<biases offset="118104492" size="512"/>
+			</blobs>
+		</layer>
+		<layer id="108" name="Mrelu4_stage4_L1" precision="FP32" type="ReLU">
+			<data negative_slope="0.0"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</input>
+			<output>
+				<port id="1">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="109" name="Mconv5_stage4_L1" precision="FP32" type="Convolution">
+			<data dilation-x="1" dilation-y="1" group="1" kernel-x="7" kernel-y="7" output="128" pad-x="3" pad-y="3" stride="1,1,1,1" stride-x="1" stride-y="1"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</input>
+			<output>
+				<port id="3">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</output>
+			<blobs>
+				<weights offset="118105004" size="3211264"/>
+				<biases offset="121316268" size="512"/>
+			</blobs>
+		</layer>
+		<layer id="110" name="Mrelu5_stage4_L1" precision="FP32" type="ReLU">
+			<data negative_slope="0.0"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</input>
+			<output>
+				<port id="1">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="111" name="Mconv6_stage4_L1" precision="FP32" type="Convolution">
+			<data dilation-x="1" dilation-y="1" group="1" kernel-x="1" kernel-y="1" output="128" pad-x="0" pad-y="0" stride="1,1,1,1" stride-x="1" stride-y="1"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</input>
+			<output>
+				<port id="3">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</output>
+			<blobs>
+				<weights offset="121316780" size="65536"/>
+				<biases offset="121382316" size="512"/>
+			</blobs>
+		</layer>
+		<layer id="112" name="Mrelu6_stage4_L1" precision="FP32" type="ReLU">
+			<data negative_slope="0.0"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</input>
+			<output>
+				<port id="1">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="113" name="Mconv7_stage4_L1" precision="FP32" type="Convolution">
+			<data dilation-x="1" dilation-y="1" group="1" kernel-x="1" kernel-y="1" output="38" pad-x="0" pad-y="0" stride="1,1,1,1" stride-x="1" stride-y="1"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</input>
+			<output>
+				<port id="3">
+					<dim>1</dim>
+					<dim>38</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</output>
+			<blobs>
+				<weights offset="121382828" size="19456"/>
+				<biases offset="121402284" size="152"/>
+			</blobs>
+		</layer>
+		<layer id="114" name="Mconv1_stage4_L2" precision="FP32" type="Convolution">
+			<data dilation-x="1" dilation-y="1" group="1" kernel-x="7" kernel-y="7" output="128" pad-x="3" pad-y="3" stride="1,1,1,1" stride-x="1" stride-y="1"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>185</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</input>
+			<output>
+				<port id="3">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</output>
+			<blobs>
+				<weights offset="121402436" size="4641280"/>
+				<biases offset="126043716" size="512"/>
+			</blobs>
+		</layer>
+		<layer id="115" name="Mrelu1_stage4_L2" precision="FP32" type="ReLU">
+			<data negative_slope="0.0"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</input>
+			<output>
+				<port id="1">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="116" name="Mconv2_stage4_L2" precision="FP32" type="Convolution">
+			<data dilation-x="1" dilation-y="1" group="1" kernel-x="7" kernel-y="7" output="128" pad-x="3" pad-y="3" stride="1,1,1,1" stride-x="1" stride-y="1"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</input>
+			<output>
+				<port id="3">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</output>
+			<blobs>
+				<weights offset="126044228" size="3211264"/>
+				<biases offset="129255492" size="512"/>
+			</blobs>
+		</layer>
+		<layer id="117" name="Mrelu2_stage4_L2" precision="FP32" type="ReLU">
+			<data negative_slope="0.0"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</input>
+			<output>
+				<port id="1">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="118" name="Mconv3_stage4_L2" precision="FP32" type="Convolution">
+			<data dilation-x="1" dilation-y="1" group="1" kernel-x="7" kernel-y="7" output="128" pad-x="3" pad-y="3" stride="1,1,1,1" stride-x="1" stride-y="1"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</input>
+			<output>
+				<port id="3">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</output>
+			<blobs>
+				<weights offset="129256004" size="3211264"/>
+				<biases offset="132467268" size="512"/>
+			</blobs>
+		</layer>
+		<layer id="119" name="Mrelu3_stage4_L2" precision="FP32" type="ReLU">
+			<data negative_slope="0.0"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</input>
+			<output>
+				<port id="1">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="120" name="Mconv4_stage4_L2" precision="FP32" type="Convolution">
+			<data dilation-x="1" dilation-y="1" group="1" kernel-x="7" kernel-y="7" output="128" pad-x="3" pad-y="3" stride="1,1,1,1" stride-x="1" stride-y="1"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</input>
+			<output>
+				<port id="3">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</output>
+			<blobs>
+				<weights offset="132467780" size="3211264"/>
+				<biases offset="135679044" size="512"/>
+			</blobs>
+		</layer>
+		<layer id="121" name="Mrelu4_stage4_L2" precision="FP32" type="ReLU">
+			<data negative_slope="0.0"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</input>
+			<output>
+				<port id="1">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="122" name="Mconv5_stage4_L2" precision="FP32" type="Convolution">
+			<data dilation-x="1" dilation-y="1" group="1" kernel-x="7" kernel-y="7" output="128" pad-x="3" pad-y="3" stride="1,1,1,1" stride-x="1" stride-y="1"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</input>
+			<output>
+				<port id="3">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</output>
+			<blobs>
+				<weights offset="135679556" size="3211264"/>
+				<biases offset="138890820" size="512"/>
+			</blobs>
+		</layer>
+		<layer id="123" name="Mrelu5_stage4_L2" precision="FP32" type="ReLU">
+			<data negative_slope="0.0"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</input>
+			<output>
+				<port id="1">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="124" name="Mconv6_stage4_L2" precision="FP32" type="Convolution">
+			<data dilation-x="1" dilation-y="1" group="1" kernel-x="1" kernel-y="1" output="128" pad-x="0" pad-y="0" stride="1,1,1,1" stride-x="1" stride-y="1"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</input>
+			<output>
+				<port id="3">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</output>
+			<blobs>
+				<weights offset="138891332" size="65536"/>
+				<biases offset="138956868" size="512"/>
+			</blobs>
+		</layer>
+		<layer id="125" name="Mrelu6_stage4_L2" precision="FP32" type="ReLU">
+			<data negative_slope="0.0"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</input>
+			<output>
+				<port id="1">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="126" name="Mconv7_stage4_L2" precision="FP32" type="Convolution">
+			<data dilation-x="1" dilation-y="1" group="1" kernel-x="1" kernel-y="1" output="19" pad-x="0" pad-y="0" stride="1,1,1,1" stride-x="1" stride-y="1"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</input>
+			<output>
+				<port id="3">
+					<dim>1</dim>
+					<dim>19</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</output>
+			<blobs>
+				<weights offset="138957380" size="9728"/>
+				<biases offset="138967108" size="76"/>
+			</blobs>
+		</layer>
+		<layer id="127" name="concat_stage5" precision="FP32" type="Concat">
+			<data axis="1"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>38</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+				<port id="1">
+					<dim>1</dim>
+					<dim>19</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+				<port id="2">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</input>
+			<output>
+				<port id="3">
+					<dim>1</dim>
+					<dim>185</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="128" name="Mconv1_stage5_L1" precision="FP32" type="Convolution">
+			<data dilation-x="1" dilation-y="1" group="1" kernel-x="7" kernel-y="7" output="128" pad-x="3" pad-y="3" stride="1,1,1,1" stride-x="1" stride-y="1"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>185</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</input>
+			<output>
+				<port id="3">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</output>
+			<blobs>
+				<weights offset="138967184" size="4641280"/>
+				<biases offset="143608464" size="512"/>
+			</blobs>
+		</layer>
+		<layer id="129" name="Mrelu1_stage5_L1" precision="FP32" type="ReLU">
+			<data negative_slope="0.0"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</input>
+			<output>
+				<port id="1">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="130" name="Mconv2_stage5_L1" precision="FP32" type="Convolution">
+			<data dilation-x="1" dilation-y="1" group="1" kernel-x="7" kernel-y="7" output="128" pad-x="3" pad-y="3" stride="1,1,1,1" stride-x="1" stride-y="1"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</input>
+			<output>
+				<port id="3">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</output>
+			<blobs>
+				<weights offset="143608976" size="3211264"/>
+				<biases offset="146820240" size="512"/>
+			</blobs>
+		</layer>
+		<layer id="131" name="Mrelu2_stage5_L1" precision="FP32" type="ReLU">
+			<data negative_slope="0.0"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</input>
+			<output>
+				<port id="1">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="132" name="Mconv3_stage5_L1" precision="FP32" type="Convolution">
+			<data dilation-x="1" dilation-y="1" group="1" kernel-x="7" kernel-y="7" output="128" pad-x="3" pad-y="3" stride="1,1,1,1" stride-x="1" stride-y="1"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</input>
+			<output>
+				<port id="3">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</output>
+			<blobs>
+				<weights offset="146820752" size="3211264"/>
+				<biases offset="150032016" size="512"/>
+			</blobs>
+		</layer>
+		<layer id="133" name="Mrelu3_stage5_L1" precision="FP32" type="ReLU">
+			<data negative_slope="0.0"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</input>
+			<output>
+				<port id="1">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="134" name="Mconv4_stage5_L1" precision="FP32" type="Convolution">
+			<data dilation-x="1" dilation-y="1" group="1" kernel-x="7" kernel-y="7" output="128" pad-x="3" pad-y="3" stride="1,1,1,1" stride-x="1" stride-y="1"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</input>
+			<output>
+				<port id="3">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</output>
+			<blobs>
+				<weights offset="150032528" size="3211264"/>
+				<biases offset="153243792" size="512"/>
+			</blobs>
+		</layer>
+		<layer id="135" name="Mrelu4_stage5_L1" precision="FP32" type="ReLU">
+			<data negative_slope="0.0"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</input>
+			<output>
+				<port id="1">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="136" name="Mconv5_stage5_L1" precision="FP32" type="Convolution">
+			<data dilation-x="1" dilation-y="1" group="1" kernel-x="7" kernel-y="7" output="128" pad-x="3" pad-y="3" stride="1,1,1,1" stride-x="1" stride-y="1"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</input>
+			<output>
+				<port id="3">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</output>
+			<blobs>
+				<weights offset="153244304" size="3211264"/>
+				<biases offset="156455568" size="512"/>
+			</blobs>
+		</layer>
+		<layer id="137" name="Mrelu5_stage5_L1" precision="FP32" type="ReLU">
+			<data negative_slope="0.0"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</input>
+			<output>
+				<port id="1">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="138" name="Mconv6_stage5_L1" precision="FP32" type="Convolution">
+			<data dilation-x="1" dilation-y="1" group="1" kernel-x="1" kernel-y="1" output="128" pad-x="0" pad-y="0" stride="1,1,1,1" stride-x="1" stride-y="1"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</input>
+			<output>
+				<port id="3">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</output>
+			<blobs>
+				<weights offset="156456080" size="65536"/>
+				<biases offset="156521616" size="512"/>
+			</blobs>
+		</layer>
+		<layer id="139" name="Mrelu6_stage5_L1" precision="FP32" type="ReLU">
+			<data negative_slope="0.0"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</input>
+			<output>
+				<port id="1">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="140" name="Mconv7_stage5_L1" precision="FP32" type="Convolution">
+			<data dilation-x="1" dilation-y="1" group="1" kernel-x="1" kernel-y="1" output="38" pad-x="0" pad-y="0" stride="1,1,1,1" stride-x="1" stride-y="1"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</input>
+			<output>
+				<port id="3">
+					<dim>1</dim>
+					<dim>38</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</output>
+			<blobs>
+				<weights offset="156522128" size="19456"/>
+				<biases offset="156541584" size="152"/>
+			</blobs>
+		</layer>
+		<layer id="141" name="Mconv1_stage5_L2" precision="FP32" type="Convolution">
+			<data dilation-x="1" dilation-y="1" group="1" kernel-x="7" kernel-y="7" output="128" pad-x="3" pad-y="3" stride="1,1,1,1" stride-x="1" stride-y="1"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>185</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</input>
+			<output>
+				<port id="3">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</output>
+			<blobs>
+				<weights offset="156541736" size="4641280"/>
+				<biases offset="161183016" size="512"/>
+			</blobs>
+		</layer>
+		<layer id="142" name="Mrelu1_stage5_L2" precision="FP32" type="ReLU">
+			<data negative_slope="0.0"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</input>
+			<output>
+				<port id="1">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="143" name="Mconv2_stage5_L2" precision="FP32" type="Convolution">
+			<data dilation-x="1" dilation-y="1" group="1" kernel-x="7" kernel-y="7" output="128" pad-x="3" pad-y="3" stride="1,1,1,1" stride-x="1" stride-y="1"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</input>
+			<output>
+				<port id="3">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</output>
+			<blobs>
+				<weights offset="161183528" size="3211264"/>
+				<biases offset="164394792" size="512"/>
+			</blobs>
+		</layer>
+		<layer id="144" name="Mrelu2_stage5_L2" precision="FP32" type="ReLU">
+			<data negative_slope="0.0"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</input>
+			<output>
+				<port id="1">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="145" name="Mconv3_stage5_L2" precision="FP32" type="Convolution">
+			<data dilation-x="1" dilation-y="1" group="1" kernel-x="7" kernel-y="7" output="128" pad-x="3" pad-y="3" stride="1,1,1,1" stride-x="1" stride-y="1"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</input>
+			<output>
+				<port id="3">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</output>
+			<blobs>
+				<weights offset="164395304" size="3211264"/>
+				<biases offset="167606568" size="512"/>
+			</blobs>
+		</layer>
+		<layer id="146" name="Mrelu3_stage5_L2" precision="FP32" type="ReLU">
+			<data negative_slope="0.0"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</input>
+			<output>
+				<port id="1">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="147" name="Mconv4_stage5_L2" precision="FP32" type="Convolution">
+			<data dilation-x="1" dilation-y="1" group="1" kernel-x="7" kernel-y="7" output="128" pad-x="3" pad-y="3" stride="1,1,1,1" stride-x="1" stride-y="1"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</input>
+			<output>
+				<port id="3">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</output>
+			<blobs>
+				<weights offset="167607080" size="3211264"/>
+				<biases offset="170818344" size="512"/>
+			</blobs>
+		</layer>
+		<layer id="148" name="Mrelu4_stage5_L2" precision="FP32" type="ReLU">
+			<data negative_slope="0.0"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</input>
+			<output>
+				<port id="1">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="149" name="Mconv5_stage5_L2" precision="FP32" type="Convolution">
+			<data dilation-x="1" dilation-y="1" group="1" kernel-x="7" kernel-y="7" output="128" pad-x="3" pad-y="3" stride="1,1,1,1" stride-x="1" stride-y="1"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</input>
+			<output>
+				<port id="3">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</output>
+			<blobs>
+				<weights offset="170818856" size="3211264"/>
+				<biases offset="174030120" size="512"/>
+			</blobs>
+		</layer>
+		<layer id="150" name="Mrelu5_stage5_L2" precision="FP32" type="ReLU">
+			<data negative_slope="0.0"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</input>
+			<output>
+				<port id="1">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="151" name="Mconv6_stage5_L2" precision="FP32" type="Convolution">
+			<data dilation-x="1" dilation-y="1" group="1" kernel-x="1" kernel-y="1" output="128" pad-x="0" pad-y="0" stride="1,1,1,1" stride-x="1" stride-y="1"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</input>
+			<output>
+				<port id="3">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</output>
+			<blobs>
+				<weights offset="174030632" size="65536"/>
+				<biases offset="174096168" size="512"/>
+			</blobs>
+		</layer>
+		<layer id="152" name="Mrelu6_stage5_L2" precision="FP32" type="ReLU">
+			<data negative_slope="0.0"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</input>
+			<output>
+				<port id="1">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="153" name="Mconv7_stage5_L2" precision="FP32" type="Convolution">
+			<data dilation-x="1" dilation-y="1" group="1" kernel-x="1" kernel-y="1" output="19" pad-x="0" pad-y="0" stride="1,1,1,1" stride-x="1" stride-y="1"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</input>
+			<output>
+				<port id="3">
+					<dim>1</dim>
+					<dim>19</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</output>
+			<blobs>
+				<weights offset="174096680" size="9728"/>
+				<biases offset="174106408" size="76"/>
+			</blobs>
+		</layer>
+		<layer id="154" name="concat_stage6" precision="FP32" type="Concat">
+			<data axis="1"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>38</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+				<port id="1">
+					<dim>1</dim>
+					<dim>19</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+				<port id="2">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</input>
+			<output>
+				<port id="3">
+					<dim>1</dim>
+					<dim>185</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="155" name="Mconv1_stage6_L1" precision="FP32" type="Convolution">
+			<data dilation-x="1" dilation-y="1" group="1" kernel-x="7" kernel-y="7" output="128" pad-x="3" pad-y="3" stride="1,1,1,1" stride-x="1" stride-y="1"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>185</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</input>
+			<output>
+				<port id="3">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</output>
+			<blobs>
+				<weights offset="174106484" size="4641280"/>
+				<biases offset="178747764" size="512"/>
+			</blobs>
+		</layer>
+		<layer id="156" name="Mrelu1_stage6_L1" precision="FP32" type="ReLU">
+			<data negative_slope="0.0"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</input>
+			<output>
+				<port id="1">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="157" name="Mconv2_stage6_L1" precision="FP32" type="Convolution">
+			<data dilation-x="1" dilation-y="1" group="1" kernel-x="7" kernel-y="7" output="128" pad-x="3" pad-y="3" stride="1,1,1,1" stride-x="1" stride-y="1"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</input>
+			<output>
+				<port id="3">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</output>
+			<blobs>
+				<weights offset="178748276" size="3211264"/>
+				<biases offset="181959540" size="512"/>
+			</blobs>
+		</layer>
+		<layer id="158" name="Mrelu2_stage6_L1" precision="FP32" type="ReLU">
+			<data negative_slope="0.0"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</input>
+			<output>
+				<port id="1">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="159" name="Mconv3_stage6_L1" precision="FP32" type="Convolution">
+			<data dilation-x="1" dilation-y="1" group="1" kernel-x="7" kernel-y="7" output="128" pad-x="3" pad-y="3" stride="1,1,1,1" stride-x="1" stride-y="1"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</input>
+			<output>
+				<port id="3">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</output>
+			<blobs>
+				<weights offset="181960052" size="3211264"/>
+				<biases offset="185171316" size="512"/>
+			</blobs>
+		</layer>
+		<layer id="160" name="Mrelu3_stage6_L1" precision="FP32" type="ReLU">
+			<data negative_slope="0.0"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</input>
+			<output>
+				<port id="1">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="161" name="Mconv4_stage6_L1" precision="FP32" type="Convolution">
+			<data dilation-x="1" dilation-y="1" group="1" kernel-x="7" kernel-y="7" output="128" pad-x="3" pad-y="3" stride="1,1,1,1" stride-x="1" stride-y="1"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</input>
+			<output>
+				<port id="3">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</output>
+			<blobs>
+				<weights offset="185171828" size="3211264"/>
+				<biases offset="188383092" size="512"/>
+			</blobs>
+		</layer>
+		<layer id="162" name="Mrelu4_stage6_L1" precision="FP32" type="ReLU">
+			<data negative_slope="0.0"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</input>
+			<output>
+				<port id="1">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="163" name="Mconv5_stage6_L1" precision="FP32" type="Convolution">
+			<data dilation-x="1" dilation-y="1" group="1" kernel-x="7" kernel-y="7" output="128" pad-x="3" pad-y="3" stride="1,1,1,1" stride-x="1" stride-y="1"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</input>
+			<output>
+				<port id="3">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</output>
+			<blobs>
+				<weights offset="188383604" size="3211264"/>
+				<biases offset="191594868" size="512"/>
+			</blobs>
+		</layer>
+		<layer id="164" name="Mrelu5_stage6_L1" precision="FP32" type="ReLU">
+			<data negative_slope="0.0"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</input>
+			<output>
+				<port id="1">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="165" name="Mconv6_stage6_L1" precision="FP32" type="Convolution">
+			<data dilation-x="1" dilation-y="1" group="1" kernel-x="1" kernel-y="1" output="128" pad-x="0" pad-y="0" stride="1,1,1,1" stride-x="1" stride-y="1"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</input>
+			<output>
+				<port id="3">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</output>
+			<blobs>
+				<weights offset="191595380" size="65536"/>
+				<biases offset="191660916" size="512"/>
+			</blobs>
+		</layer>
+		<layer id="166" name="Mrelu6_stage6_L1" precision="FP32" type="ReLU">
+			<data negative_slope="0.0"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</input>
+			<output>
+				<port id="1">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="167" name="Mconv7_stage6_L1" precision="FP32" type="Convolution">
+			<data dilation-x="1" dilation-y="1" group="1" kernel-x="1" kernel-y="1" output="38" pad-x="0" pad-y="0" stride="1,1,1,1" stride-x="1" stride-y="1"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</input>
+			<output>
+				<port id="3">
+					<dim>1</dim>
+					<dim>38</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</output>
+			<blobs>
+				<weights offset="191661428" size="19456"/>
+				<biases offset="191680884" size="152"/>
+			</blobs>
+		</layer>
+		<layer id="168" name="Mconv1_stage6_L2" precision="FP32" type="Convolution">
+			<data dilation-x="1" dilation-y="1" group="1" kernel-x="7" kernel-y="7" output="128" pad-x="3" pad-y="3" stride="1,1,1,1" stride-x="1" stride-y="1"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>185</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</input>
+			<output>
+				<port id="3">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</output>
+			<blobs>
+				<weights offset="191681036" size="4641280"/>
+				<biases offset="196322316" size="512"/>
+			</blobs>
+		</layer>
+		<layer id="169" name="Mrelu1_stage6_L2" precision="FP32" type="ReLU">
+			<data negative_slope="0.0"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</input>
+			<output>
+				<port id="1">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="170" name="Mconv2_stage6_L2" precision="FP32" type="Convolution">
+			<data dilation-x="1" dilation-y="1" group="1" kernel-x="7" kernel-y="7" output="128" pad-x="3" pad-y="3" stride="1,1,1,1" stride-x="1" stride-y="1"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</input>
+			<output>
+				<port id="3">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</output>
+			<blobs>
+				<weights offset="196322828" size="3211264"/>
+				<biases offset="199534092" size="512"/>
+			</blobs>
+		</layer>
+		<layer id="171" name="Mrelu2_stage6_L2" precision="FP32" type="ReLU">
+			<data negative_slope="0.0"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</input>
+			<output>
+				<port id="1">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="172" name="Mconv3_stage6_L2" precision="FP32" type="Convolution">
+			<data dilation-x="1" dilation-y="1" group="1" kernel-x="7" kernel-y="7" output="128" pad-x="3" pad-y="3" stride="1,1,1,1" stride-x="1" stride-y="1"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</input>
+			<output>
+				<port id="3">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</output>
+			<blobs>
+				<weights offset="199534604" size="3211264"/>
+				<biases offset="202745868" size="512"/>
+			</blobs>
+		</layer>
+		<layer id="173" name="Mrelu3_stage6_L2" precision="FP32" type="ReLU">
+			<data negative_slope="0.0"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</input>
+			<output>
+				<port id="1">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="174" name="Mconv4_stage6_L2" precision="FP32" type="Convolution">
+			<data dilation-x="1" dilation-y="1" group="1" kernel-x="7" kernel-y="7" output="128" pad-x="3" pad-y="3" stride="1,1,1,1" stride-x="1" stride-y="1"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</input>
+			<output>
+				<port id="3">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</output>
+			<blobs>
+				<weights offset="202746380" size="3211264"/>
+				<biases offset="205957644" size="512"/>
+			</blobs>
+		</layer>
+		<layer id="175" name="Mrelu4_stage6_L2" precision="FP32" type="ReLU">
+			<data negative_slope="0.0"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</input>
+			<output>
+				<port id="1">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="176" name="Mconv5_stage6_L2" precision="FP32" type="Convolution">
+			<data dilation-x="1" dilation-y="1" group="1" kernel-x="7" kernel-y="7" output="128" pad-x="3" pad-y="3" stride="1,1,1,1" stride-x="1" stride-y="1"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</input>
+			<output>
+				<port id="3">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</output>
+			<blobs>
+				<weights offset="205958156" size="3211264"/>
+				<biases offset="209169420" size="512"/>
+			</blobs>
+		</layer>
+		<layer id="177" name="Mrelu5_stage6_L2" precision="FP32" type="ReLU">
+			<data negative_slope="0.0"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</input>
+			<output>
+				<port id="1">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="178" name="Mconv6_stage6_L2" precision="FP32" type="Convolution">
+			<data dilation-x="1" dilation-y="1" group="1" kernel-x="1" kernel-y="1" output="128" pad-x="0" pad-y="0" stride="1,1,1,1" stride-x="1" stride-y="1"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</input>
+			<output>
+				<port id="3">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</output>
+			<blobs>
+				<weights offset="209169932" size="65536"/>
+				<biases offset="209235468" size="512"/>
+			</blobs>
+		</layer>
+		<layer id="179" name="Mrelu6_stage6_L2" precision="FP32" type="ReLU">
+			<data negative_slope="0.0"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</input>
+			<output>
+				<port id="1">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="180" name="Mconv7_stage6_L2" precision="FP32" type="Convolution">
+			<data dilation-x="1" dilation-y="1" group="1" kernel-x="1" kernel-y="1" output="19" pad-x="0" pad-y="0" stride="1,1,1,1" stride-x="1" stride-y="1"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>128</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</input>
+			<output>
+				<port id="3">
+					<dim>1</dim>
+					<dim>19</dim>
+					<dim>46</dim>
+					<dim>46</dim>
+				</port>
+			</output>
+			<blobs>
+				<weights offset="209235980" size="9728"/>
+				<biases offset="209245708" size="76"/>
+			</blobs>
+		</layer>
+	</layers>
+	<edges>
+		<edge from-layer="0" from-port="0" to-layer="1" to-port="0"/>
+		<edge from-layer="1" from-port="3" to-layer="2" to-port="0"/>
+		<edge from-layer="2" from-port="1" to-layer="3" to-port="0"/>
+		<edge from-layer="3" from-port="3" to-layer="4" to-port="0"/>
+		<edge from-layer="4" from-port="1" to-layer="5" to-port="0"/>
+		<edge from-layer="5" from-port="1" to-layer="6" to-port="0"/>
+		<edge from-layer="6" from-port="3" to-layer="7" to-port="0"/>
+		<edge from-layer="7" from-port="1" to-layer="8" to-port="0"/>
+		<edge from-layer="8" from-port="3" to-layer="9" to-port="0"/>
+		<edge from-layer="9" from-port="1" to-layer="10" to-port="0"/>
+		<edge from-layer="10" from-port="1" to-layer="11" to-port="0"/>
+		<edge from-layer="11" from-port="3" to-layer="12" to-port="0"/>
+		<edge from-layer="12" from-port="1" to-layer="13" to-port="0"/>
+		<edge from-layer="13" from-port="3" to-layer="14" to-port="0"/>
+		<edge from-layer="14" from-port="1" to-layer="15" to-port="0"/>
+		<edge from-layer="15" from-port="3" to-layer="16" to-port="0"/>
+		<edge from-layer="16" from-port="1" to-layer="17" to-port="0"/>
+		<edge from-layer="17" from-port="3" to-layer="18" to-port="0"/>
+		<edge from-layer="18" from-port="1" to-layer="19" to-port="0"/>
+		<edge from-layer="19" from-port="1" to-layer="20" to-port="0"/>
+		<edge from-layer="20" from-port="3" to-layer="21" to-port="0"/>
+		<edge from-layer="21" from-port="1" to-layer="22" to-port="0"/>
+		<edge from-layer="22" from-port="3" to-layer="23" to-port="0"/>
+		<edge from-layer="23" from-port="1" to-layer="24" to-port="0"/>
+		<edge from-layer="24" from-port="3" to-layer="25" to-port="0"/>
+		<edge from-layer="25" from-port="1" to-layer="26" to-port="0"/>
+		<edge from-layer="26" from-port="3" to-layer="27" to-port="0"/>
+		<edge from-layer="27" from-port="1" to-layer="28" to-port="0"/>
+		<edge from-layer="28" from-port="3" to-layer="29" to-port="0"/>
+		<edge from-layer="29" from-port="1" to-layer="30" to-port="0"/>
+		<edge from-layer="30" from-port="3" to-layer="31" to-port="0"/>
+		<edge from-layer="31" from-port="1" to-layer="32" to-port="0"/>
+		<edge from-layer="32" from-port="3" to-layer="33" to-port="0"/>
+		<edge from-layer="33" from-port="1" to-layer="34" to-port="0"/>
+		<edge from-layer="34" from-port="3" to-layer="35" to-port="0"/>
+		<edge from-layer="35" from-port="1" to-layer="36" to-port="0"/>
+		<edge from-layer="27" from-port="1" to-layer="37" to-port="0"/>
+		<edge from-layer="37" from-port="3" to-layer="38" to-port="0"/>
+		<edge from-layer="38" from-port="1" to-layer="39" to-port="0"/>
+		<edge from-layer="39" from-port="3" to-layer="40" to-port="0"/>
+		<edge from-layer="40" from-port="1" to-layer="41" to-port="0"/>
+		<edge from-layer="41" from-port="3" to-layer="42" to-port="0"/>
+		<edge from-layer="42" from-port="1" to-layer="43" to-port="0"/>
+		<edge from-layer="43" from-port="3" to-layer="44" to-port="0"/>
+		<edge from-layer="44" from-port="1" to-layer="45" to-port="0"/>
+		<edge from-layer="36" from-port="3" to-layer="46" to-port="0"/>
+		<edge from-layer="45" from-port="3" to-layer="46" to-port="1"/>
+		<edge from-layer="27" from-port="1" to-layer="46" to-port="2"/>
+		<edge from-layer="46" from-port="3" to-layer="47" to-port="0"/>
+		<edge from-layer="47" from-port="3" to-layer="48" to-port="0"/>
+		<edge from-layer="48" from-port="1" to-layer="49" to-port="0"/>
+		<edge from-layer="49" from-port="3" to-layer="50" to-port="0"/>
+		<edge from-layer="50" from-port="1" to-layer="51" to-port="0"/>
+		<edge from-layer="51" from-port="3" to-layer="52" to-port="0"/>
+		<edge from-layer="52" from-port="1" to-layer="53" to-port="0"/>
+		<edge from-layer="53" from-port="3" to-layer="54" to-port="0"/>
+		<edge from-layer="54" from-port="1" to-layer="55" to-port="0"/>
+		<edge from-layer="55" from-port="3" to-layer="56" to-port="0"/>
+		<edge from-layer="56" from-port="1" to-layer="57" to-port="0"/>
+		<edge from-layer="57" from-port="3" to-layer="58" to-port="0"/>
+		<edge from-layer="58" from-port="1" to-layer="59" to-port="0"/>
+		<edge from-layer="46" from-port="3" to-layer="60" to-port="0"/>
+		<edge from-layer="60" from-port="3" to-layer="61" to-port="0"/>
+		<edge from-layer="61" from-port="1" to-layer="62" to-port="0"/>
+		<edge from-layer="62" from-port="3" to-layer="63" to-port="0"/>
+		<edge from-layer="63" from-port="1" to-layer="64" to-port="0"/>
+		<edge from-layer="64" from-port="3" to-layer="65" to-port="0"/>
+		<edge from-layer="65" from-port="1" to-layer="66" to-port="0"/>
+		<edge from-layer="66" from-port="3" to-layer="67" to-port="0"/>
+		<edge from-layer="67" from-port="1" to-layer="68" to-port="0"/>
+		<edge from-layer="68" from-port="3" to-layer="69" to-port="0"/>
+		<edge from-layer="69" from-port="1" to-layer="70" to-port="0"/>
+		<edge from-layer="70" from-port="3" to-layer="71" to-port="0"/>
+		<edge from-layer="71" from-port="1" to-layer="72" to-port="0"/>
+		<edge from-layer="59" from-port="3" to-layer="73" to-port="0"/>
+		<edge from-layer="72" from-port="3" to-layer="73" to-port="1"/>
+		<edge from-layer="27" from-port="1" to-layer="73" to-port="2"/>
+		<edge from-layer="73" from-port="3" to-layer="74" to-port="0"/>
+		<edge from-layer="74" from-port="3" to-layer="75" to-port="0"/>
+		<edge from-layer="75" from-port="1" to-layer="76" to-port="0"/>
+		<edge from-layer="76" from-port="3" to-layer="77" to-port="0"/>
+		<edge from-layer="77" from-port="1" to-layer="78" to-port="0"/>
+		<edge from-layer="78" from-port="3" to-layer="79" to-port="0"/>
+		<edge from-layer="79" from-port="1" to-layer="80" to-port="0"/>
+		<edge from-layer="80" from-port="3" to-layer="81" to-port="0"/>
+		<edge from-layer="81" from-port="1" to-layer="82" to-port="0"/>
+		<edge from-layer="82" from-port="3" to-layer="83" to-port="0"/>
+		<edge from-layer="83" from-port="1" to-layer="84" to-port="0"/>
+		<edge from-layer="84" from-port="3" to-layer="85" to-port="0"/>
+		<edge from-layer="85" from-port="1" to-layer="86" to-port="0"/>
+		<edge from-layer="73" from-port="3" to-layer="87" to-port="0"/>
+		<edge from-layer="87" from-port="3" to-layer="88" to-port="0"/>
+		<edge from-layer="88" from-port="1" to-layer="89" to-port="0"/>
+		<edge from-layer="89" from-port="3" to-layer="90" to-port="0"/>
+		<edge from-layer="90" from-port="1" to-layer="91" to-port="0"/>
+		<edge from-layer="91" from-port="3" to-layer="92" to-port="0"/>
+		<edge from-layer="92" from-port="1" to-layer="93" to-port="0"/>
+		<edge from-layer="93" from-port="3" to-layer="94" to-port="0"/>
+		<edge from-layer="94" from-port="1" to-layer="95" to-port="0"/>
+		<edge from-layer="95" from-port="3" to-layer="96" to-port="0"/>
+		<edge from-layer="96" from-port="1" to-layer="97" to-port="0"/>
+		<edge from-layer="97" from-port="3" to-layer="98" to-port="0"/>
+		<edge from-layer="98" from-port="1" to-layer="99" to-port="0"/>
+		<edge from-layer="86" from-port="3" to-layer="100" to-port="0"/>
+		<edge from-layer="99" from-port="3" to-layer="100" to-port="1"/>
+		<edge from-layer="27" from-port="1" to-layer="100" to-port="2"/>
+		<edge from-layer="100" from-port="3" to-layer="101" to-port="0"/>
+		<edge from-layer="101" from-port="3" to-layer="102" to-port="0"/>
+		<edge from-layer="102" from-port="1" to-layer="103" to-port="0"/>
+		<edge from-layer="103" from-port="3" to-layer="104" to-port="0"/>
+		<edge from-layer="104" from-port="1" to-layer="105" to-port="0"/>
+		<edge from-layer="105" from-port="3" to-layer="106" to-port="0"/>
+		<edge from-layer="106" from-port="1" to-layer="107" to-port="0"/>
+		<edge from-layer="107" from-port="3" to-layer="108" to-port="0"/>
+		<edge from-layer="108" from-port="1" to-layer="109" to-port="0"/>
+		<edge from-layer="109" from-port="3" to-layer="110" to-port="0"/>
+		<edge from-layer="110" from-port="1" to-layer="111" to-port="0"/>
+		<edge from-layer="111" from-port="3" to-layer="112" to-port="0"/>
+		<edge from-layer="112" from-port="1" to-layer="113" to-port="0"/>
+		<edge from-layer="100" from-port="3" to-layer="114" to-port="0"/>
+		<edge from-layer="114" from-port="3" to-layer="115" to-port="0"/>
+		<edge from-layer="115" from-port="1" to-layer="116" to-port="0"/>
+		<edge from-layer="116" from-port="3" to-layer="117" to-port="0"/>
+		<edge from-layer="117" from-port="1" to-layer="118" to-port="0"/>
+		<edge from-layer="118" from-port="3" to-layer="119" to-port="0"/>
+		<edge from-layer="119" from-port="1" to-layer="120" to-port="0"/>
+		<edge from-layer="120" from-port="3" to-layer="121" to-port="0"/>
+		<edge from-layer="121" from-port="1" to-layer="122" to-port="0"/>
+		<edge from-layer="122" from-port="3" to-layer="123" to-port="0"/>
+		<edge from-layer="123" from-port="1" to-layer="124" to-port="0"/>
+		<edge from-layer="124" from-port="3" to-layer="125" to-port="0"/>
+		<edge from-layer="125" from-port="1" to-layer="126" to-port="0"/>
+		<edge from-layer="113" from-port="3" to-layer="127" to-port="0"/>
+		<edge from-layer="126" from-port="3" to-layer="127" to-port="1"/>
+		<edge from-layer="27" from-port="1" to-layer="127" to-port="2"/>
+		<edge from-layer="127" from-port="3" to-layer="128" to-port="0"/>
+		<edge from-layer="128" from-port="3" to-layer="129" to-port="0"/>
+		<edge from-layer="129" from-port="1" to-layer="130" to-port="0"/>
+		<edge from-layer="130" from-port="3" to-layer="131" to-port="0"/>
+		<edge from-layer="131" from-port="1" to-layer="132" to-port="0"/>
+		<edge from-layer="132" from-port="3" to-layer="133" to-port="0"/>
+		<edge from-layer="133" from-port="1" to-layer="134" to-port="0"/>
+		<edge from-layer="134" from-port="3" to-layer="135" to-port="0"/>
+		<edge from-layer="135" from-port="1" to-layer="136" to-port="0"/>
+		<edge from-layer="136" from-port="3" to-layer="137" to-port="0"/>
+		<edge from-layer="137" from-port="1" to-layer="138" to-port="0"/>
+		<edge from-layer="138" from-port="3" to-layer="139" to-port="0"/>
+		<edge from-layer="139" from-port="1" to-layer="140" to-port="0"/>
+		<edge from-layer="127" from-port="3" to-layer="141" to-port="0"/>
+		<edge from-layer="141" from-port="3" to-layer="142" to-port="0"/>
+		<edge from-layer="142" from-port="1" to-layer="143" to-port="0"/>
+		<edge from-layer="143" from-port="3" to-layer="144" to-port="0"/>
+		<edge from-layer="144" from-port="1" to-layer="145" to-port="0"/>
+		<edge from-layer="145" from-port="3" to-layer="146" to-port="0"/>
+		<edge from-layer="146" from-port="1" to-layer="147" to-port="0"/>
+		<edge from-layer="147" from-port="3" to-layer="148" to-port="0"/>
+		<edge from-layer="148" from-port="1" to-layer="149" to-port="0"/>
+		<edge from-layer="149" from-port="3" to-layer="150" to-port="0"/>
+		<edge from-layer="150" from-port="1" to-layer="151" to-port="0"/>
+		<edge from-layer="151" from-port="3" to-layer="152" to-port="0"/>
+		<edge from-layer="152" from-port="1" to-layer="153" to-port="0"/>
+		<edge from-layer="140" from-port="3" to-layer="154" to-port="0"/>
+		<edge from-layer="153" from-port="3" to-layer="154" to-port="1"/>
+		<edge from-layer="27" from-port="1" to-layer="154" to-port="2"/>
+		<edge from-layer="154" from-port="3" to-layer="155" to-port="0"/>
+		<edge from-layer="155" from-port="3" to-layer="156" to-port="0"/>
+		<edge from-layer="156" from-port="1" to-layer="157" to-port="0"/>
+		<edge from-layer="157" from-port="3" to-layer="158" to-port="0"/>
+		<edge from-layer="158" from-port="1" to-layer="159" to-port="0"/>
+		<edge from-layer="159" from-port="3" to-layer="160" to-port="0"/>
+		<edge from-layer="160" from-port="1" to-layer="161" to-port="0"/>
+		<edge from-layer="161" from-port="3" to-layer="162" to-port="0"/>
+		<edge from-layer="162" from-port="1" to-layer="163" to-port="0"/>
+		<edge from-layer="163" from-port="3" to-layer="164" to-port="0"/>
+		<edge from-layer="164" from-port="1" to-layer="165" to-port="0"/>
+		<edge from-layer="165" from-port="3" to-layer="166" to-port="0"/>
+		<edge from-layer="166" from-port="1" to-layer="167" to-port="0"/>
+		<edge from-layer="154" from-port="3" to-layer="168" to-port="0"/>
+		<edge from-layer="168" from-port="3" to-layer="169" to-port="0"/>
+		<edge from-layer="169" from-port="1" to-layer="170" to-port="0"/>
+		<edge from-layer="170" from-port="3" to-layer="171" to-port="0"/>
+		<edge from-layer="171" from-port="1" to-layer="172" to-port="0"/>
+		<edge from-layer="172" from-port="3" to-layer="173" to-port="0"/>
+		<edge from-layer="173" from-port="1" to-layer="174" to-port="0"/>
+		<edge from-layer="174" from-port="3" to-layer="175" to-port="0"/>
+		<edge from-layer="175" from-port="1" to-layer="176" to-port="0"/>
+		<edge from-layer="176" from-port="3" to-layer="177" to-port="0"/>
+		<edge from-layer="177" from-port="1" to-layer="178" to-port="0"/>
+		<edge from-layer="178" from-port="3" to-layer="179" to-port="0"/>
+		<edge from-layer="179" from-port="1" to-layer="180" to-port="0"/>
+	</edges>
+</net>
