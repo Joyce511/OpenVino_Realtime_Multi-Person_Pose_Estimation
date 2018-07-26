@@ -8,7 +8,8 @@ https://arxiv.org/abs/1611.08050
 Original Github repo: 
 https://github.com/ZheC/Realtime_Multi-Person_Pose_Estimation
 
-Caffe Model: http://posefs1.perception.cs.cmu.edu/Users/ZheCao/pose_iter_440000.caffemodel
+Caffe Model: 
+http://posefs1.perception.cs.cmu.edu/Users/ZheCao/pose_iter_440000.caffemodel
 
 Prototxt:
 https://github.com/ZheC/Realtime_Multi-Person_Pose_Estimation/blob/master/model/_trained_COCO/pose_deploy.prototxt
@@ -21,9 +22,11 @@ https://github.com/ZheC/Realtime_Multi-Person_Pose_Estimation/blob/master/model/
 - Numpy
 - Scipy
 - Matplotlib
+- clDNN for GPU mode
 ## 2. Usage
 - Download model files:
-pose_iter_440000.bin https://drive.google.com/file/d/1vC6AORvo6oYJ0ub34GZ8ujTwgYQcSUkY/view?usp=sharing
+pose_iter_440000.bin 
+https://drive.google.com/file/d/1vC6AORvo6oYJ0ub34GZ8ujTwgYQcSUkY/view?usp=sharing
 Pose_iter_440000.caffemodel
 https://drive.google.com/file/d/12KZUKdlZppRNvNw5eTsSrA_dI6jXCo7N/view?usp=sharing
 
