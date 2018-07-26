@@ -16,7 +16,7 @@ https://github.com/ZheC/Realtime_Multi-Person_Pose_Estimation/blob/master/model/
 ## 1.Prerequisite
 - Intel OpenVino Toolkit 2018 R2
 - Jupyter Notebook
-- pen CV2
+- Open CV2
 - Python 3.5 or higher
 - Numpy
 - Scipy
