@@ -1,7 +1,7 @@
 # Realtime Multi-Person Pose Estimation
 ## 0.Introduction 
 Developed by Zhe Cao, Tomas Simon, Shih-En Wei and Yaser Sheikh, this realtime multi-person pose estimation model utilizes a bottom-up approach, without using any person detector. 
-
+This repo contains the Intel OpenVino implementation of this model.
 CVPR'17 paper: 
 https://arxiv.org/abs/1611.08050
 
@@ -31,7 +31,6 @@ https://drive.google.com/file/d/12KZUKdlZppRNvNw5eTsSrA_dI6jXCo7N/view?usp=shari
 ```
 $ cd <OpenVino_Realtime_Multi-Person_Pose_Estimation>/Realtime_Multi-Person_Pose_Estimation/testing/python
 $ jupyter notebook
-
 ```
 - Open pose_estimation_openvino_picture.ipynb / pose_estimation_openvino_video_CPU.ipynb / pose_estimation_openvino_video_GPU.ipynb
 
